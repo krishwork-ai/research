@@ -1,10 +1,10 @@
 llm:
-  model: "google/gemini-2.0-flash-exp:free"
+  model: "nvidia/nemotron-3-super-120b-a12b:free"
   base_url: "https://openrouter.ai/api/v1"
   max_tokens: 2048
 
 embeddings:
-  model: "BAAI/bge-small-en-v1.5"
+  model: "nvidia/llama-nemotron-embed-vl-1b-v2:free"
   batch_size: 32
 
 chunking:
@@ -13,3 +13,6 @@ chunking:
 
 retrieval:
   top_k: 5
+
+storage:
+  db_path: data/research.db

@@ -1,0 +1,15 @@
+llm:
+  model: "google/gemini-2.0-flash-exp:free"
+  base_url: "https://openrouter.ai/api/v1"
+  max_tokens: 2048
+
+embeddings:
+  model: "BAAI/bge-small-en-v1.5"
+  batch_size: 32
+
+chunking:
+  size: 512
+  overlap: 64
+
+retrieval:
+  top_k: 5

@@ -28,11 +28,17 @@ class RetrievalConfig:
 
 
 @dataclass
+class StorageConfig:
+    db_path: str
+
+
+@dataclass
 class Config:
     llm: LLMConfig
     embeddings: EmbeddingsConfig
     chunking: ChunkingConfig
     retrieval: RetrievalConfig
+    storage: StorageConfig
 
 
 def load_config(path: str = "configs/config.yaml") -> Config:
@@ -44,6 +50,7 @@ def load_config(path: str = "configs/config.yaml") -> Config:
         embeddings=EmbeddingsConfig(**raw["embeddings"]),
         chunking=ChunkingConfig(**raw["chunking"]),
         retrieval=RetrievalConfig(**raw["retrieval"]),
+        storage=StorageConfig(**raw["storage"]),
     )
 
 
